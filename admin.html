@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration | Ma Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="admin-body">
+  <section id="loginSection" class="auth-card">
+    <h1>Administration</h1>
+    <p>Connectez-vous avec le compte administrateur Firebase.</p>
+    <form id="loginForm">
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Mot de passe<input type="password" name="password" required /></label>
+      <button class="primary-button full">Connexion</button>
+      <p id="loginStatus"></p>
+    </form>
+    <a href="index.html">← Retour à la boutique</a>
+  </section>
+
+  <main id="adminDashboard" class="admin-dashboard hidden">
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">TABLEAU DE BORD</p>
+        <h1>Gestion de la boutique</h1>
+      </div>
+      <div class="admin-actions">
+        <a class="secondary-button" href="index.html">Voir la boutique</a>
+        <button id="logoutButton" class="danger-button">Déconnexion</button>
+      </div>
+    </header>
+
+    <div class="admin-tabs">
+      <button class="tab active" data-tab="productsPanel">Produits</button>
+      <button class="tab" data-tab="ordersPanel">Commandes</button>
+    </div>
+
+    <section id="productsPanel" class="admin-panel">
+      <div class="admin-grid">
+        <form id="productForm" class="admin-card">
+          <h2 id="productFormTitle">Ajouter un produit</h2>
+          <input type="hidden" name="productId" />
+
+          <label>Nom du produit<input name="name" required /></label>
+          <label>
+            Catégorie
+            <select id="productCategory" name="category" required>
+              <option value="">Choisir une catégorie</option>
+              <option value="sac-femme">Sac Femme</option>
+              <option value="vetement-femme">Vêtement Femme</option>
+              <option value="maquillage">Maquillage</option>
+              <option value="parfum-femme">Parfum Femme</option>
+            </select>
+          </label>
+          <div class="two-columns">
+            <label>Prix (DA)<input name="price" type="number" min="0" required /></label>
+            <label>Ancien prix (DA)<input name="oldPrice" type="number" min="0" /></label>
+          </div>
+          <label>Stock<input name="stock" type="number" min="0" value="1" required /></label>
+          <label id="sizesField" class="hidden">
+            Tailles disponibles
+            <input name="sizes" placeholder="S, M, L, XL, XXL" />
+            <small class="field-help">
+              Séparez chaque taille par une virgule.
+            </small>
+          </label>
+          <label id="colorsField" class="hidden">
+            Couleurs disponibles
+            <input name="colors" placeholder="Noir, Blanc, Rose, Beige" />
+            <small class="field-help">
+              Séparez chaque couleur par une virgule.
+            </small>
+          </label>
+          <label>Description<textarea name="description" rows="4" required></textarea></label>
+          <label>Lien de la photo du produit
+            <input
+              id="productImages"
+              name="productImages"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+            />
+
+            <small class="field-help">
+              Vous pouvez sélectionner plusieurs photos. La première sera la photo principale.
+            </small>
+
+            <div id="imagesPreview" class="images-preview"></div>
+          </label>
+          <small class="field-help">Utilisez un lien d’image public, ou placez l’image dans assets/images puis écrivez son chemin.</small>
+          <label class="checkbox-row"><input name="featured" type="checkbox" /> Mettre en avant</label>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Enregistrer</button>
+            <button id="cancelEditButton" class="secondary-button hidden" type="button">Annuler</button>
+          </div>
+          <p id="productStatus"></p>
+        </form>
+
+        <div class="admin-card">
+          <h2>Produits enregistrés</h2>
+          <div id="adminProductsList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ordersPanel" class="admin-panel hidden">
+      <div class="admin-card">
+        <div class="section-heading">
+          <h2>Commandes reçues</h2>
+          <button id="refreshOrders" class="secondary-button">Actualiser</button>
+        </div>
+        <div id="ordersList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>
