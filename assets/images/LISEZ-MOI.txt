@@ -1,0 +1,1 @@
+Placez vos images ici. Exemple : chemise.jpg puis utilisez assets/images/chemise.jpg dans admin.html.

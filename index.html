@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boutique e-commerce moderne avec commande en ligne." />
+  <title>Assia Chic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-message message-1">
+      Paiement à la livraison 💵
+    </div>
+
+    <div class="topbar-message message-2">
+      Livraison rapide dans les 58 wilayas 🚚
+    </div>
+
+    <div class="topbar-message message-3">
+      Produits de qualité ✨
+    </div>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Accueil Assia Chic">
+      <img src="assets/logo.jpeg" alt="Logo Assia Chic" />
+    </a>
+    <nav>
+      <a href="#products">Produits</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="social-links" aria-label="Réseaux sociaux Assia Chic">
+        <a href="https://www.facebook.com/share/1Ef9Ye1XQQ/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7h1.9V2.4c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.4H7V13h2.9v9h3.8Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/assia_chic_boutique?igsh=b3hjZnZscWlhMXBr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.1 1.5a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@assiachicboutique?_r=1&_t=ZS-98V1un3Vr6q" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 2c.3 2.4 1.7 3.9 4.4 4.1v3.1a9.5 9.5 0 0 1-4.4-1v6.3a7.5 7.5 0 1 1-6.5-7.4v3.2a4.4 4.4 0 1 0 3.4 4.2V2h3.1Z"/></svg>
+        </a>
+      </div>
+    <button id="cartButton" class="cart-button">
+      <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20 8H7M10 20a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM19 20a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+      </svg>
+      Panier <span id="cartCount">0</span>
+    </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">NOUVELLE COLLECTION</p>
+        <h1>Une boutique moderne pour vendre vos produits en ligne.</h1>
+        <p>Choisissez la couleur, la taille et commandez facilement avec paiement à la livraison.</p>
+        <a class="primary-button" href="#products">Voir les produits</a>
+      </div>
+      <div class="hero-card logo-card">
+        <img src="assets/logo.jpeg" alt="Logo Assia Chic">
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CATALOGUE</p>
+          <h2>Nos produits</h2>
+        </div>
+        <div class="filters">
+          <input id="searchInput" type="search" placeholder="Rechercher un produit..." />
+          <select id="categoryFilter">
+            <option value="">Toutes les catégories</option>
+          </select>
+        </div>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <p id="emptyProducts" class="empty hidden">Aucun produit disponible.</p>
+    </section>
+
+    <section id="about" class="info-section">
+      <div>
+        <p class="eyebrow">À PROPOS</p>
+        <h2>Une sélection pensée pour sublimer votre quotidien</h2>
+
+          <p class="about-description">
+            Assia Chic réunit maquillage, parfums, sacs et vêtements pour femme,
+            soigneusement sélectionnés pour allier élégance, qualité et tendances.
+          </p>
+      </div>
+      <div class="benefits">
+
+        <article>
+          <div class="benefit-icon">✦</div>
+          <div>
+            <strong>Sélection exclusivement féminine</strong>
+            <span>
+              Découvrez nos collections de maquillage, parfums, sacs et vêtements
+              soigneusement sélectionnées pour femme.
+            </span>
+          </div>
+        </article>
+
+        <article>
+          <div class="benefit-icon">🚚</div>
+          <div>
+            <strong>Livraison dans toute l’Algérie</strong>
+            <span>
+              Nous assurons une livraison rapide et fiable dans les 58 wilayas.
+            </span>
+          </div>
+        </article>
+
+        <article>
+          <div class="benefit-icon">✓</div>
+          <div>
+            <strong>Achetez en toute confiance</strong>
+            <span>
+              Commandez facilement, payez à la livraison et contactez-nous directement
+              sur WhatsApp pour obtenir de l’aide.
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="modern-footer">
+
+    <div class="footer-news">
+      <p class="footer-small-title">RESTONS CONNECTÉS</p>
+      <h2>Des nouvelles de la famille Assia Chic ? C’est ici !</h2>
+      <p>Dernières tendances, actualités et promotions.</p>
+    </div>
+
+    <div class="footer-grid">
+
+      <!-- Coordonnées -->
+      <div class="footer-column footer-contact">
+        <img src="assets/logo.jpeg" alt="Logo Assia Chic" class="footer-logo">
+
+        <h3>Assia Chic</h3>
+
+        <p>
+          <strong>📍 Adresse</strong>
+          <span> Raïs Hamidou Alger, Algérie</span>
+        </p>
+
+        <p>
+          <strong>📞 Téléphone</strong>
+          <a href="tel:"> +213 794 22 56 39</a>
+        </p>
+
+        <p>
+          <strong>📧 Email</strong>
+          <a href="mailto:Assiachicboutique@gmail.com">
+             Assiachicboutique@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <!-- Questions -->
+      <div class="footer-column footer-faq">
+        <h3>Informations</h3>
+
+        <details>
+          <summary>Notre magasin</summary>
+          <div class="faq-answer">
+            Notre boutique en ligne est disponible 24 h/24. Contactez-nous pour
+            obtenir davantage d’informations sur nos produits.
+          </div>
+        </details>
+
+        <details>
+          <summary>Qui sommes-nous ?</summary>
+          <div class="faq-answer">
+            Assia Chic est une boutique dédiée aux produits pour femme :
+            maquillage, sacs, parfums et vêtements.
+          </div>
+        </details>
+
+        <details>
+          <summary>Livraison</summary>
+          <div class="faq-answer">
+            Nous assurons une livraison rapide dans les 58 wilayas d’Algérie avec Yalidine express.
+          </div>
+        </details>
+
+        <details>
+          <summary>Paiement</summary>
+          <div class="faq-answer">
+            Le paiement s’effectue à la livraison après réception de votre commande.
+          </div>
+        </details>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div class="footer-column footer-follow">
+        <h3>Follow us</h3>
+        <p>Suivez Assia Chic sur les réseaux sociaux.</p>
+
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/share/1Ef9Ye1XQQ/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook">f</a>
+
+          <a href="https://www.instagram.com/assia_chic_boutique?igsh=b3hjZnZscWlhMXBr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram">◎</a>
+
+          <a href="https://www.tiktok.com/@assiachicboutique?_r=1&_t=ZS-98V1un3Vr6q"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok">♪</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Assia Chic — Tous droits réservés</span>
+    </div>
+
+  </footer>
+
+  <aside id="cartDrawer" class="drawer">
+    <div class="drawer-header">
+      <h2>Votre panier</h2>
+      <button id="closeCart" class="icon-button">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">0 DA</strong>
+    </div>
+    <button id="checkoutButton" class="primary-button full">Commander</button>
+  </aside>
+  <div id="overlay" class="overlay hidden"></div>
+
+  <dialog id="productDialog">
+    <button id="closeProductDialog" class="dialog-close">✕</button>
+    <div id="productDialogContent"></div>
+  </dialog>
+
+  <dialog id="checkoutDialog">
+    <button id="closeCheckoutDialog" class="dialog-close">✕</button>
+    <form id="checkoutForm" class="checkout-form">
+      <h2>Finaliser la commande</h2>
+      <label>Nom complet<input name="customerName" required /></label>
+      <label>Téléphone<input name="phone" required pattern="[0-9 +]{8,20}" /></label>
+      <label>Wilaya<input name="wilaya" required /></label>
+      <label>Commune<input name="commune" required /></label>
+      <label>Adresse complète<textarea name="address" required></textarea></label>
+      <label>Remarque<textarea name="note" placeholder="Facultatif"></textarea></label>
+      <button class="primary-button full" type="submit">Confirmer la commande</button>
+      <p id="checkoutStatus"></p>
+    </form>
+  </dialog>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/213794225639?text=Bonjour%20Assia%20Chic%2C%20je%20souhaite%20avoir%20des%20informations."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter Assia Chic sur WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3a12.8 12.8 0 0 0-11 19.3L3.5 28.5l6.4-1.7A12.9 12.9 0 1 0 16 3Zm0 23.4a10.5 10.5 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.4Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3 2.2.9 3 .9 4 .8 1.2-.2 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.2-.3-.9-.4-1.2-.6Z"/>
+    </svg>
+  </a>
+
+  <script type="module" src="assets/shop.js"></script>
+
+  <script>
+    const benefitsSection = document.querySelector(".benefits");
+
+    if (benefitsSection) {
+      const benefitsObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              benefitsSection.classList.add("show-benefits");
+
+              // Arrête l’observation : l’animation ne se fera qu’une seule fois
+              observer.unobserve(benefitsSection);
+            }
+          });
+        },
+        {
+          threshold: 0.25
+        }
+      );
+
+      benefitsObserver.observe(benefitsSection);
+    }
+  </script>
+
+</body>
+</html>
